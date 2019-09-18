@@ -6,8 +6,34 @@
     <title>StartOps</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+      // Add a click event on each of them
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+          });
+        });
+      }
+    });
+    </script>
   </head>
   <body>
+
     <section class="hero is-dark is-medium">
       <!-- Hero head: will stick at the top -->
       <div class="hero-head">
@@ -16,7 +42,6 @@
             <div class="navbar-brand">
               <a class="navbar-item" href="https://startops.network">
                 <img src="assets/startops_logo_white.png" alt="StartOps">
-                <!-- <h1 class="is-size-4">StartOps</h1> -->
               </a>
               <span class="navbar-burger burger" data-target="navbarMenuHeroA">
                 <span></span>
@@ -26,7 +51,7 @@
             </div>
             <div id="navbarMenuHeroA" class="navbar-menu">
               <div class="navbar-end">
-                <a class="navbar-item is-active" href="https://startops.network">
+                <a class="navbar-item is-active" href="index.html">
                   Home
                 </a>
                 <a class="navbar-item" href="faq.html">
@@ -77,14 +102,9 @@
       <br>
       <br>
 
-      <div class="columns is-desktop">
-
-        <!-- First column -->
-        <div class="column">
-        </div>
-
-        <!-- Second column -->
-        <div class="column is-half">
+      <div class="columns">
+        <!-- Main column-->
+        <div class="column is-three-fifths is-offset-one-fifth">
           <!-- Jobs board card -->
           <div class="card">
             <div class="card-content">
@@ -143,11 +163,6 @@
               </div>
             </div>
         </div>
-
-        <!-- Thrid column -->
-        <div class="column">
-        </div>
-
 
       </section>
 
